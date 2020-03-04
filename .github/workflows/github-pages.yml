@@ -7,9 +7,19 @@ jobs:
   deploy:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1  # v2 does not have submodules option now
+        with:
+          submodules: true
 
-      - run: somebuild
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.66.0'
+          extended: true
+
+      - name: Build
+        run: hugo --minify
+
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
