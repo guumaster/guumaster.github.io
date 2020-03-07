@@ -1,0 +1,31 @@
+<section class="container list">
+  <h1 class="title">
+    {{- if eq .Kind "taxonomy" -}}
+      {{- i18n .Data.Singular | title -}}
+      {{- print ": " -}}
+    {{- end -}}
+
+    {{- .Title -}}
+  </h1>
+  {{- .Content -}}
+  <hr/>
+  <ul>
+    {{ range .Paginator.Pages }}
+    <li>
+        {{ $.Scratch.Set "link" .RelPermalink }}
+        {{ with .Params.link }} {{ $.Scratch.Set "link" . }} {{ end }}
+        {{ with .Description }} {{ $.Scratch.Set "subheader" . }} {{ end }}
+        {{.Scratch.Add "subheader" "" }}
+        {{ if .Date }}
+            {{ .Date.Format (.Site.Params.projectFormat | default "January, 2006") | printf "• %s" | .Scratch.Add "subheader" }}
+        {{ end }}
+      <a class="title" href="{{ $.Scratch.Get "link" }}">{{ .Title }}</a>
+        {{ with .Page.Params.Categories }}{{ partial "talk_category.html" . }}{{ end }}
+        {{ .Scratch.Get "subheader"  }}
+        {{ with .Page.Params.Tags }}{{ partial "taxonomy/tags.html" . }}{{ end }}
+    </li>
+    <br/>
+    {{ end }}
+  </ul>
+  {{ partial "pagination.html" . }}
+</section>

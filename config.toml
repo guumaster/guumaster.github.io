@@ -1,61 +1,113 @@
-baseURL = "https://guumaster.github.io/"
-languageCode = "en-us"
-title = "Guumaster"
-theme = "minimal"
+baseurl = "https://guumaster.github.io"
+title = "guumaster"
+
+theme = "hugo-coder"
+
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+paginate = 20
+canonifyurls = true
+githubUsername = "guumaster"
+
+pygmentsstyle = "b2"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+#disqusShortname = "yourdiscussshortname"
+[markup.goldmark.renderer]
+unsafe= true
 
 [params]
     author = "Guumaster"
-    description = "Another blog to remember things I did"
-    githubUsername = "guumaster"
-    accent = "#3252af"
-    showBorder = true
-    backgroundColor = "#e6e6e6"
-    font = "Roboto" # should match the name on Google Fonts!
-    highlight = true
-    highlightStyle = "default"
-    highlightLanguages = ["go", "javascript"]
+    description = "Gustavo Marin's personal website"
+    keywords = "blog,developer,personal"
+    info = "A hobbit programmer"
+    avatarurl = "images/avatar.jpg"
+    gravatar = "gustavoandresmarin@gmail.com"
+    footercontent = "Enter a text here."
 
-[[menu.main]]
-    url = "/"
-    name = "Home"
+    dateformat = "January 2, 2006"
+    projectFormat = "January, 2006"
+
+    hideCredits = false
+    hideCopyright = true
+    since = 2020
+
+    # Git Commit in Footer, uncomment the line below to enable it.
+    commit = "https://github.com/guumaster/guumaster.github.io/tree/"
+
+    rtl = false
+
+    # Specify light/dark colorscheme
+    # Supported values:
+    # "auto" (use preference set by browser)
+    # "dark" (dark background, light foreground)
+    # "light" (light background, dark foreground) (default)
+    colorscheme = "light"
+
+    # Series see also post count
+    maxSeeAlsoItems = 3
+
+    # Custom CSS
+    custom_css = []
+
+    # Custom JS
+    custom_js = []
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github"
     weight = 1
-
-[[menu.main]]
-    url = "/about/"
-    name = "About"
-    weight = 2
-
-[[menu.main]]
-    url = "/post/"
-    name = "Posts"
-    weight = 3
-
-[[menu.main]]
-    url = "/project/"
-    name = "Projects"
-    weight = 4
-
-# Social icons to be shown on the right-hand side of the navigation bar.
-# The "name" field should match the name of the icon in Font Awesome.
-# The list of available icons can be found at http://fontawesome.io/icons.
-
-[[menu.icon]]
-    url = "mailto:guuweb@gmail.com"
-    name = "envelope-o"
-    weight = 1
-
-[[menu.icon]]
     url = "https://github.com/guumaster/"
-    name = "github"
-    weight = 2
-
-[[menu.icon]]
-    url = "https://twitter.com/guumaster/"
-    name = "twitter"
+[[params.social]]
+    name = "Twitter"
+    icon = "fab fa-twitter"
     weight = 3
-
-[[menu.icon]]
-    url = "https://www.linkedin.com/in/gustavoandresmarin/"
-    name = "linkedin"
+    url = "https://twitter.com/guumaster/"
+[[params.social]]
+    name = "LinkedIn"
+    icon = "fab fa-linkedin"
     weight = 4
+    url = "https://www.linkedin.com/in/gustavoandresmarin/"
+[[params.social]]
+    name = "RSS"
+    icon = "fas fa-rss"
+    weight = 6
+    url = "https://guumaster.github.io/index.xml"
+    rel = "alternate"
+    type = "application/rss+xml"
+
+
+[languages]
+    [languages.en]
+        languagename = "English"
+
+        [languages.en.menu]
+
+            [[languages.en.menu.main]]
+            name = "About"
+            weight = 1
+            url = "about/"
+
+            [[languages.en.menu.main]]
+            name = "Posts"
+            weight = 2
+            url = "posts/"
+
+            [[languages.en.menu.main]]
+            name = "Projects"
+            weight = 3
+            url = "projects/"
+
+            [[languages.en.menu.main]]
+            name = "Talks"
+            weight = 4
+            url = "talks/"
+
 
