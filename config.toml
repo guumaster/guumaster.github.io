@@ -1,6 +1,6 @@
 baseurl = "https://guumaster.github.io"
 title = "guumaster"
-
+enableEmoji = true
 theme = "hugo-coder"
 
 languagecode = "en"
@@ -25,7 +25,7 @@ unsafe= true
     info = "A hobbit programmer"
     avatarurl = "images/avatar.jpg"
     gravatar = "gustavoandresmarin@gmail.com"
-    footercontent = "Enter a text here."
+    footercontent = ""
 
     dateformat = "January 2, 2006"
     projectFormat = "January, 2006"
@@ -82,7 +82,6 @@ unsafe= true
     url = "https://guumaster.github.io/index.xml"
     rel = "alternate"
     type = "application/rss+xml"
-
 
 [languages]
     [languages.en]

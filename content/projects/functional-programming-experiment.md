@@ -2,7 +2,6 @@
 title: "Functional JavaScript Experiment"
 description: "Implement lists functions in JS"
 tags: ["functional-programming", "js"]
-weight: 10
 date: 2016-03-16
 draft: false
 ---
